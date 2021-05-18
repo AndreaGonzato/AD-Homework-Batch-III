@@ -13,6 +13,8 @@ positive_infinity = float('inf')
     :return
         a DijkstraResult
 """
+
+
 def binary_heap_dijkstra(G: Graph, source: Node) -> 'DijkstraResult':
     distances = [positive_infinity for i in range(0, len(G))]
     predecessors = [None for i in range(0, len(G))]
@@ -87,6 +89,8 @@ Where the first element of the tuple is the shortest path from the source node t
 The second element is the result of the forward Dijkstra search
 The third element is the result of the backward Dijkstra search
 """
+
+
 def bidirectional_dijkstra(graph: Graph, source: Node, target: Node) -> Tuple[Path, 'DijkstraResult', 'DijkstraResult']:
     # generate a reversed graph
     reversed_graph = graph.get_reversed_graph()
@@ -280,18 +284,3 @@ class DijkstraResult:
         for row in self._result:
             output += str(row[0]).rjust(3) + str(row[1]).rjust(9) + str(row[2]).rjust(12) + "\n"
         return output
-
-if __name__ == '__main__':
-    nA = Node("A")
-    nB = Node("B")
-
-    # assign the edges
-    nA.add_edge(nB, 5)
-
-    graph = Graph([nA, nB])
-
-    a,b,c = bidirectional_dijkstra(graph, nA, nB)
-    print(a)
-    print(b)
-    print(c)
-

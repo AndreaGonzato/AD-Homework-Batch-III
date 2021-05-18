@@ -91,5 +91,3 @@ if __name__ == '__main__':
     print("\nforward dijkstra result\n", forward_dijkstra)
     print("\nbackward dijkstra result\n", backward_dijkstra)
     # '''
-
-

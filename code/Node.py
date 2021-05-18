@@ -33,6 +33,7 @@ class Node(object):
     Check if it is really necessary to add a shortcut.
     In case the node has already a equivalent cheaper edge do not add this false shortcut.
     """
+
     def add_shortcut(self, destination_node: 'Node', cost: Union[int, float]):
         need_to_add_shortcut = True
         for edge in self._edges:
@@ -85,4 +86,3 @@ class Edge:
 
     def set_cost(self, new_cost: Union[int, float]):
         self._cost = new_cost
-

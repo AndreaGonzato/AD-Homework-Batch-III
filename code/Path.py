@@ -2,7 +2,6 @@ from Node import Node
 
 
 class Path(object):
-
     """
     A Path class that describe a path in a weighted graph
 
@@ -50,5 +49,3 @@ class Path(object):
             if node is not other._source:
                 self.add_connection(node)
         return self
-
-
